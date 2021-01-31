@@ -99,7 +99,7 @@ select {
 }
 
 .trash-button, .complete-button {
-  color: white;
+  color:rgba(255, 255, 255, 0.7);
   border: none;
   padding: 1rem;
   cursor: pointer;
@@ -113,6 +113,17 @@ select {
 .trash-button {
   background: #900C3F;
 }
+
+.trash-button:hover {
+  color: 	 #900C3F;
+  background: #ec98b8;
+}
+
+.complete-button:hover {
+  color: #00b300;
+  background:  #a7ffa7;
+}
+
 
 .completed {
   text-decoration: line-through;

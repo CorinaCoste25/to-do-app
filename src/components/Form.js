@@ -1,4 +1,5 @@
 import React from 'react';
+var uuid = require('react-native-uuid');
 
 const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
 
@@ -8,8 +9,13 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
 
     const submitTodoHandler = (e) => {
         e.preventDefault();
-        setTodos([...todos, {text: inputText, completed: false, id: Math.random() * 1000 }]);
-        setInputText("");
+        const [rId] = uuid.v4();
+        if(inputText){  
+            setTodos([...todos, {text: inputText, completed: false, id: rId}]);
+            setInputText("");
+        } else {
+            alert("You cannot add an empty todo");
+        }
     }
 
     const statusHandler = (e) => {
